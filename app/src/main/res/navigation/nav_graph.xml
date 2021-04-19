@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/sourceSelectionFragment"
-        android:name="de.tobiasmoss.fotogallerie_app.Interface.sourceSelectionFragment"
+        android:name="de.tobiasmoss.fotogallerie_app.user_interface.GalleryFragment"
         android:label="fragment_source_selection_list"
         tools:layout="@layout/fragment_gallery_list" />
 </navigation>

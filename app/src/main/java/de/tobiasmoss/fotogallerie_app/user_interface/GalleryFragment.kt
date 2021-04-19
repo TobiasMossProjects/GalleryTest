@@ -1,7 +1,8 @@
-package de.tobiasmoss.fotogallerie_app.Interface
+package de.tobiasmoss.fotogallerie_app.user_interface
 
 import android.Manifest
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -17,9 +18,9 @@ import de.tobiasmoss.fotogallerie_app.R
 /**
  * A fragment representing a list of Items.
  */
-class sourceSelectionFragment : Fragment() {
+class GalleryFragment : Fragment() {
 
-    private var columnCount = 1
+    private var columnCount = 3
     private lateinit var myAdapter: GalleryRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +48,9 @@ class sourceSelectionFragment : Fragment() {
         }
 
         // Set the adapter
+        if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            columnCount += 1
+        }
         if (myView is RecyclerView)
             with(myView) {
                 layoutManager = when {
@@ -54,7 +58,7 @@ class sourceSelectionFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
 
-                myAdapter = GalleryRecyclerViewAdapter(emptyList())
+                myAdapter = GalleryRecyclerViewAdapter(requireActivity(), emptyList())
                 adapter = myAdapter
             }
 
@@ -106,7 +110,7 @@ class sourceSelectionFragment : Fragment() {
         // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
-            sourceSelectionFragment().apply {
+            GalleryFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_COLUMN_COUNT, columnCount)
                 }
