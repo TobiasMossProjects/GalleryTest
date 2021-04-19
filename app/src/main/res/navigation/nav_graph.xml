@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/galleryFragment">
+    app:startDestination="@id/sourceSelectionFragment">
 
     <fragment
-        android:id="@+id/galleryFragment"
-        android:name="de.tobiasmoss.fotogallerie_app.Interface.GalleryFragment"
-        android:label="gallery_fragment"
-        tools:layout="@layout/gallery_fragment" />
+        android:id="@+id/sourceSelectionFragment"
+        android:name="de.tobiasmoss.fotogallerie_app.Interface.sourceSelectionFragment"
+        android:label="fragment_source_selection_list"
+        tools:layout="@layout/fragment_gallery_list" />
 </navigation>

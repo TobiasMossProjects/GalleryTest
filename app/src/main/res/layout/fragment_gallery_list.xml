@@ -10,4 +10,4 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".Interface.sourceSelectionFragment"
-    tools:listitem="@layout/fragment_source_selection" />
+    tools:listitem="@layout/fragment_gallery" />
